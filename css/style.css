@@ -9,11 +9,6 @@
   
 }
 
-.box-shadow{
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  
-}
-
 :root{
    /* Dark Mode */
   --primary-bg-color: #181A1F;
@@ -36,8 +31,6 @@
   --primary-text-color: #fff;
   --secondary-text-color: #BDBEC0;
 
-  
-  
 }
 
 @media (min-width: 768px){
@@ -66,8 +59,8 @@ body{
   font-family: 'Poppins', sans-serif;
   color: var(--primary-text-color);
   line-height: 1.5;
-  background-image: url(./assets/images/background-shapes.png);
-  
+  background-image: url(/assets/images/background-shapes.png);
+  background-repeat: repeat;
 
 }
 
@@ -176,13 +169,14 @@ picture {
   display: grid;
   align-items: center;
   justify-content: center;
-  padding-top: calc(2*var(--sections-padding));
+  padding-top: var(--sections-padding);
   padding-bottom: var(--sections-padding);
 }
 
 .hero-text{
   order: 2;
   text-align: center;
+  font-weight: 200;
 }
 
 .hero-img{
@@ -219,7 +213,7 @@ picture {
   font-size: clamp(1rem, 4vw + 1rem, var(--fs-normal-text));
   color: var(--primary-text-color);
   /* margin-bottom: 20px; */
-  font-weight: 200;
+  font-weight: 300;
   
 }
 
@@ -282,7 +276,7 @@ picture {
   .hero-wrapper{
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "text img";
-  
+    padding-top:calc(2*var(--sections-padding));
   }
 
   .hero-text{
@@ -300,7 +294,7 @@ picture {
   .hero-img{
     grid-area: img;
     align-items: flex-end;
-    
+    margin-left: 2rem;
   }
 
 .contact-me-button{
@@ -380,11 +374,11 @@ picture {
 }
 
 .degree h4{
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .degree p{
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .degree .degree-info{
@@ -393,6 +387,10 @@ picture {
 
 .degree .grade{
   color: var(--main-color);
+}
+
+.skills-section .section-title{
+  margin-bottom: var(--sections-padding);
 }
 
 @media(min-width: 768px){
@@ -409,8 +407,18 @@ picture {
   .section-title::after{
     width: 30%;
     margin-left: -15%;
-}
+  }
+  .skills-section .section-title{
+    margin-bottom: calc(2*var(--sections-padding));
+  }
 
+  .degree h4{
+    font-weight: 300;
+  }
+
+  .degree p{
+    font-weight: 200;
+  }
 }
 
 /* Skill Section */
@@ -475,7 +483,8 @@ footer{
 .copy-right{
   margin-top: 2rem;
 }
-.fa-heart{
+
+footer span{
   color: var(--main-color);
 }
 
@@ -488,11 +497,13 @@ footer{
 }
 
 
-
-
 footer .contact-me-button{
   margin-top: 1rem;
   font-size: var(--fs-normal-text);
+}
+
+footer p{
+  font-weight: 300;
 }
 
 @media(min-width: 768px){
@@ -506,5 +517,13 @@ footer .contact-me-button{
 
   footer .contact-me-button{
     margin-right: 1rem;
+  }
+
+  footer p{
+    font-weight: 200;
+  }
+
+  .contact-me-section h4{
+    font-size: var(--fs-small-heading);
   }
 }
